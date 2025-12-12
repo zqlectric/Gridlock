@@ -100,7 +100,7 @@ Both conditions display restart + menu buttons.
 
 ---
 
-# 👤 Credits
+# Credits
 
 ### **Developer**
 **Zachary Goldberg**
@@ -110,11 +110,11 @@ Godot Engine 4.4.1
 
 ---
 
-# 📄 License
+# License
 This project was created for academic use.  
 Redistribution or commercial use requires permission from the developer.
 
 ---
 
-# 🎉 Thank You for Playing Gridlock!
+# Thank You for Playing Gridlock!
 Feel free to reach out with feedback or suggestions.
