@@ -12,7 +12,7 @@ signal game_loaded
 @export var required_gems: int = 10
 @export var starting_time_seconds: int = 120
 
-const save_path := "res://User/gridlock_save.cfg"
+const save_path := "user://gridlock_save.cfg"
 var collected_gem_ids: Dictionary = {}
 var collected_gems: int = 0
 var time_left: float
