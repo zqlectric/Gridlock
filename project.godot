@@ -18,7 +18,7 @@ boot_splash/image="uid://davgtjmxl2wqa"
 config/icon="uid://byst20lgcb2e5"
 config/macos_native_icon="res://Images/GridlockIcon.icns"
 config/windows_native_icon="res://Images/GridlockIcon.ico"
-boot_splash/minimum_display_time=3500
+boot_splash/minimum_display_time=4000
 
 [autoload]
 
