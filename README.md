@@ -42,6 +42,11 @@
 - Win/Lose overlays  
 - HUD display Timer & Gems
 
+### Save/Load
+- Save Timer & Gem count
+- Continue at any point
+- Loads player position & rotation
+
 ### Audio
 - Background music  
 - Footstep sound effect
