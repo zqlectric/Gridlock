@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpqli62f4spxk"]
+
+[ext_resource type="Texture2D" uid="uid://cywxhaf8une65" path="res://Images/leaf_texture.jpeg" id="1_nfb4a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pqkjy"]
+size = Vector3(2, 2, 0.45)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oq45"]
+albedo_color = Color(0.309804, 0.639216, 0.298039, 1)
+albedo_texture = ExtResource("1_nfb4a")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfb4a"]
+size = Vector3(2, 2, 0.45)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.68476, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_pqkjy")
+surface_material_override/0 = SubResource("StandardMaterial3D_3oq45")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_nfb4a")

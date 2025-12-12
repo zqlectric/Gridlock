@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv00alvqofwk8"]
+
+[ext_resource type="Script" uid="uid://dt70x2nb1gbyj" path="res://scripts/DroneOrb.gd" id="1_41vn2"]
+[ext_resource type="PackedScene" uid="uid://c4w0iyxiunmc0" path="res://Assets/orb.tscn" id="2_pukf1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ykisy"]
+radius = 1.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DroneOrb" type="Area3D" parent="."]
+script = ExtResource("1_41vn2")
+metadata/point_a = NodePath("../PointA")
+metadata/point_b = NodePath("../PointB")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DroneOrb"]
+shape = SubResource("SphereShape3D_ykisy")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DroneOrb"]
+light_color = Color(0.998504, 0, 0.25581, 1)
+
+[node name="orb" parent="DroneOrb" instance=ExtResource("2_pukf1")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DroneOrb"]
+
+[node name="PointA" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09975, 0, 0)
+
+[node name="PointB" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63151, 0, 0)

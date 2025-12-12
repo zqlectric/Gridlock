@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://qbcy8kftm7gi"]
+
+[ext_resource type="Script" uid="uid://djb55luh7f4d7" path="res://scripts/ExitDoor.gd" id="1_6mxqc"]
+[ext_resource type="PackedScene" uid="uid://cr5tnmtofpa8x" path="res://Assets/arch.tscn" id="2_bo6c0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6mxqc"]
+size = Vector3(2.98, 4.56, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bo6c0"]
+size = Vector3(2.98, 4.56, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_6mxqc")
+
+[node name="DoorBody" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.693, 0)
+shape = SubResource("BoxShape3D_6mxqc")
+
+[node name="arch" parent="DoorBody" instance=ExtResource("2_bo6c0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Trigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69059, 0)
+shape = SubResource("BoxShape3D_bo6c0")

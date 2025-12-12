@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://br68n3hgqojbw"]
+
+[ext_resource type="Script" uid="uid://jbslgk3a767m" path="res://scripts/music_manager.gd" id="1_rjr7q"]
+[ext_resource type="AudioStream" uid="uid://dkiu47t6hmkyw" path="res://Audio/theme.mp3" id="1_tylfe"]
+[ext_resource type="AudioStream" uid="uid://cr3bbmjg358bp" path="res://Audio/gem_found.mp3" id="3_vga7j"]
+[ext_resource type="AudioStream" uid="uid://cee4771m6enic" path="res://Audio/click.mp3" id="4_586rx"]
+[ext_resource type="AudioStream" uid="uid://cx06x83guibdi" path="res://Audio/footsteps.mp3" id="5_sots7"]
+[ext_resource type="AudioStream" uid="uid://dmjj6n8k60mke" path="res://Audio/orb_hit.mp3" id="6_apc2x"]
+[ext_resource type="AudioStream" uid="uid://dtdbkqhveq6br" path="res://Audio/door_opening.mp3" id="7_ylqfa"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_rjr7q")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tylfe")
+volume_db = -12.0
+autoplay = true
+
+[node name="GemFound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vga7j")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_586rx")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sots7")
+
+[node name="OrbHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_apc2x")
+
+[node name="DoorOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ylqfa")

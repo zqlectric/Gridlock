@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://o8aq0jiialtx"]
+
+[ext_resource type="Script" uid="uid://bpov7usjau77c" path="res://scripts/HUD.gd" id="1_k5de2"]
+[ext_resource type="StyleBox" uid="uid://junt2bwp5ogo" path="res://Rounded/rounded_hover.tres" id="2_vow1y"]
+[ext_resource type="StyleBox" uid="uid://cnae5nyyasc8e" path="res://Rounded/rounded_buttons.tres" id="3_ne771"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_efote"]
+font_size = 14
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_k5de2")
+
+[node name="TopRight" type="VBoxContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(5, 5)
+anchors_preset = -1
+anchor_left = 0.99566
+anchor_right = 1.0
+offset_left = -85.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 64.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/TopRight"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+text = "Time: 120"
+label_settings = SubResource("LabelSettings_efote")
+
+[node name="GemLabel" type="Label" parent="CanvasLayer/TopRight"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+text = "Gem: 0/5 "
+label_settings = SubResource("LabelSettings_efote")
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -64.0
+offset_right = 47.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="CenterMessage" type="Label" parent="CanvasLayer/VBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Win/Lose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="CanvasLayer/VBox"]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_vow1y")
+theme_override_styles/normal = ExtResource("3_ne771")
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/VBox"]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_vow1y")
+theme_override_styles/normal = ExtResource("3_ne771")
+text = "Main Menu"

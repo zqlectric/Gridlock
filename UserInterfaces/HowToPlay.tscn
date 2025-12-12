@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://wjjce14k0rmj"]
+
+[ext_resource type="Script" uid="uid://cq2g1dbtkr2ij" path="res://scripts/how_to_play.gd" id="1_t2toj"]
+[ext_resource type="StyleBox" uid="uid://junt2bwp5ogo" path="res://Rounded/rounded_hover.tres" id="2_2xw34"]
+[ext_resource type="StyleBox" uid="uid://cnae5nyyasc8e" path="res://Rounded/rounded_buttons.tres" id="3_ee5bx"]
+
+[node name="HowToPlayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2toj")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.403922, 0.635294, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -188.0
+offset_right = 192.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "How To Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Movement: WASD
+Mouse: look
+Space: jump
+Shift: sprint
+Escape: pause
+Objective: collect all gems, reach exit
+Avoid: danger orbs (they reset you)
+Timer: if it reaches 0, you lose"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBox/VBox"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = ExtResource("2_2xw34")
+theme_override_styles/normal = ExtResource("3_ee5bx")
+text = "Back"

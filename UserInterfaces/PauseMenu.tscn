@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://pgssab216lh6"]
+
+[ext_resource type="Script" uid="uid://dsk0nfadw6hfq" path="res://scripts/PauseMenu.gd" id="1_nov15"]
+[ext_resource type="StyleBox" uid="uid://cnae5nyyasc8e" path="res://Rounded/rounded_buttons.tres" id="2_etnfi"]
+[ext_resource type="StyleBox" uid="uid://junt2bwp5ogo" path="res://Rounded/rounded_hover.tres" id="2_q775a"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("1_nov15")
+
+[node name="Dimmer" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.165, 0.404, 0.635, 0.5)
+
+[node name="VBox" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -123.5
+offset_right = 71.0
+offset_bottom = 123.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="PauseMenu/VBox"]
+z_index = 5
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "Pause Menu"
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/VBox"]
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_q775a")
+theme_override_styles/normal = ExtResource("2_etnfi")
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/VBox"]
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_q775a")
+theme_override_styles/normal = ExtResource("2_etnfi")
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/VBox"]
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_q775a")
+theme_override_styles/normal = ExtResource("2_etnfi")
+text = "Main Menu"

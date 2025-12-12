@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhu5biafprwu"]
+
+[ext_resource type="Script" uid="uid://bl0txrigqjn3y" path="res://scripts/about_menu.gd" id="1_kj1q4"]
+[ext_resource type="StyleBox" uid="uid://junt2bwp5ogo" path="res://Rounded/rounded_hover.tres" id="1_u0lh7"]
+[ext_resource type="StyleBox" uid="uid://cnae5nyyasc8e" path="res://Rounded/rounded_buttons.tres" id="2_kj1q4"]
+
+[node name="AboutMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kj1q4")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.164706, 0.403922, 0.635294, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -188.0
+offset_right = 192.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 95
+text = "ABOUT GRIDLOCK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="Label" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Developed by: Zachary Goldberg
+Roles: Design, Programming, Art, Studio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBox/VBox"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = ExtResource("1_u0lh7")
+theme_override_styles/normal = ExtResource("2_kj1q4")
+text = "Back"

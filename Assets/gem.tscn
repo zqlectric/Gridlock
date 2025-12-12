@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0xynsc2hvpap"]
+
+[ext_resource type="Script" uid="uid://bfmkn7u1rwgps" path="res://scripts/gem_area_3d.gd" id="1_whk3i"]
+[ext_resource type="PackedScene" uid="uid://ddmakpjpbd1l4" path="res://Assets/gem_obj.tscn" id="2_edvqy"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_whk3i"]
+radius = 1.2
+
+[node name="Gem" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+script = ExtResource("1_whk3i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.999733, 2.23517e-08, 1.49012e-08, -2.23517e-08, 0.999733, 0, -3.72529e-08, 5.96046e-08, 0.999733, -0.0455428, 0.394002, 0.0316072)
+shape = SubResource("SphereShape3D_whk3i")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D"]
+light_color = Color(1, 0.243137, 1, 1)
+
+[node name="gem" parent="Area3D" instance=ExtResource("2_edvqy")]
