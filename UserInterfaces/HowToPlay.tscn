@@ -47,15 +47,42 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="Label" parent="CenterContainer/VBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Movement: WASD
-Mouse: look
-Space: jump
-Shift: sprint
-Escape: pause
-Objective: collect all gems, reach exit
-Avoid: danger orbs (they reset you)
-Timer: if it reaches 0, you lose"
+theme_override_font_sizes/font_size = 20
+text = "Movement:
+W / A / S / D - Move
+Mouse - Look around
+Shift - Spring
+Space - Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="RichTextLabel2" type="Label" parent="CenterContainer/VBox/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Gameplay:
+- Collect all gems to unlock the exit
+- Avoid drone orbs - getting 
+caught resets the run
+- Reach the exit before time runs
+out to win."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="Label" parent="CenterContainer/VBox/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Menus:
+Escape Button - Pause Menu
+Save Game - Saves 
+current progress
+Continue Game - Continues a 
+saved run from the main menu
+Quit - Exit the game"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -20,4 +20,5 @@ func _on_trigger_body_entered(body: Node) -> void:
 
 	if body is CharacterBody3D:
 		MusicManager.play_door_music()
+		await get_tree().create_timer(1.0).timeout
 		GameManager.player_reached_exit()

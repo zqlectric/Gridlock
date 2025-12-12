@@ -26,7 +26,7 @@ sky = SubResource("Sky_b8f3k")
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_hbm4x")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386219, 1.37582, 25.1372)
 script = ExtResource("1_yvhtj")
 
@@ -152,20 +152,25 @@ transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 43.3965, 2.
 [node name="Node3D29" parent="." instance=ExtResource("7_allc3")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 42.8724, 2.17949, 7.12265)
 
-[node name="Gem" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 22.8685, 2.23027, 23.3127)
+metadata/gem_id = "GEM_01"
 
-[node name="Gem9" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem9" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 31.6702, 2.23027, 23.9223)
+metadata/gem_id = "GEM_09"
 
-[node name="Gem10" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem10" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 44.0251, 2.23027, 23.9223)
+metadata/gem_id = "GEM_10"
 
-[node name="Gem6" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem6" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 19.0344, 2.23027, 4.62834)
+metadata/gem_id = "GEM_06"
 
-[node name="Gem2" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem2" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 12.7432, 2.10457, -5.69887)
+metadata/gem_id = "GEM_02"
 
 [node name="Node3D33" parent="." instance=ExtResource("7_allc3")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 1.38989, 2.1795, -5.43218)
@@ -179,23 +184,31 @@ transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 36.4412, 2.
 [node name="Node3D41" parent="." instance=ExtResource("7_allc3")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 29.7444, 2.17949, -27.4709)
 
+[node name="Node3D44" parent="." instance=ExtResource("7_allc3")]
+transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 8.62646, 2.17949, -34.8061)
+
 [node name="Node3D42" parent="." instance=ExtResource("6_cn1gj")]
 transform = Transform3D(1.49961, 0, 0, 0, 1.19969, 0, 0, 0, 1.49961, 32.2389, 0.515762, -33.8546)
 
-[node name="Gem3" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem3" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 13.1524, 2.37514, -24.5796)
+metadata/gem_id = "GEM_03"
 
-[node name="Gem8" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem8" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 10.655, 2.37514, -35.1271)
+metadata/gem_id = "GEM_08"
 
-[node name="Gem7" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem7" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 42.6725, 2.37514, -13.8298)
+metadata/gem_id = "GEM_07"
 
-[node name="Gem4" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem4" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 44.1369, 2.28077, 2.51181)
+metadata/gem_id = "GEM_04"
 
-[node name="Gem5" parent="." instance=ExtResource("3_gw35f")]
+[node name="Gem5" parent="." groups=["gems"] instance=ExtResource("3_gw35f")]
 transform = Transform3D(1.14095, 0, 0, 0, 1.00037, 0, 0, 0, 1.00589, 8.363, 2.0463, 11.4354)
+metadata/gem_id = "GEM_05"
 
 [node name="Node3D43" type="Node3D" parent="."]
 transform = Transform3D(3.30833, 0, 0, 0, 1.00037, 0, 0, 0, 12.2846, -49.1697, -0.000627756, -5.1769)

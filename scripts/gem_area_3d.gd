@@ -3,11 +3,11 @@ extends Area3D
 @onready var visual: Node3D = $gem
 @onready var shape: CollisionShape3D = $CollisionShape3D
 @onready var light: OmniLight3D = $OmniLight3D
-
 var _collected: bool = false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
+	add_to_group("gems")
 
 
 func _on_body_entered(body: Node) -> void:
@@ -16,7 +16,9 @@ func _on_body_entered(body: Node) -> void:
 	if body is CharacterBody3D:
 		MusicManager.play_gem_music()
 		_collected = true
-		GameManager.gem_collected();
+		var id := str(get_parent().get_meta("gem_id"))
+		print(get_parent().get_meta("gem_id"))
+		GameManager.gem_collected(id);
 		_start_disappear()
 
 

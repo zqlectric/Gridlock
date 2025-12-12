@@ -5,6 +5,9 @@ extends CharacterBody3D
 @export var jump_force: float = 4.0
 @export var gravity: float = 12.0
 @export var mouse_sensitivity: float = 0.003
+@export var base_fov: float = 75.0
+@export var sprint_fov: float = 85.0
+@export var fov_lerp_speed: float = 8.0
 
 @onready var cam: Camera3D = $Camera3D
 
@@ -15,6 +18,7 @@ var _step_timer := 0.0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	cam.fov = base_fov
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and \
@@ -46,6 +50,11 @@ func _physics_process(delta: float) -> void:
 	var speed := move_speed
 	if Input.is_action_pressed("sprint"):
 		speed *= sprint_multiplier
+	
+	var target_fov := base_fov
+	if Input.is_action_pressed("sprint") and move_dir.length() > 0.1:
+		target_fov = sprint_fov
+	cam.fov = lerp(cam.fov, target_fov, fov_lerp_speed * delta)
 
 	var v := velocity
 	v.x = move_dir.x * speed

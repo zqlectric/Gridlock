@@ -39,7 +39,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 95
 text = "Pause Menu"
 
-[node name="ResumeButton" type="Button" parent="PauseMenu/VBox"]
+[node name="UpperHBox" type="HBoxContainer" parent="PauseMenu/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/VBox/UpperHBox"]
 z_index = 5
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
@@ -48,7 +53,21 @@ theme_override_styles/hover = ExtResource("2_q775a")
 theme_override_styles/normal = ExtResource("2_etnfi")
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="PauseMenu/VBox"]
+[node name="SaveButton" type="Button" parent="PauseMenu/VBox/UpperHBox"]
+z_index = 5
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = ExtResource("2_q775a")
+theme_override_styles/normal = ExtResource("2_etnfi")
+text = "Save Game"
+
+[node name="LowerHBox" type="HBoxContainer" parent="PauseMenu/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="PauseMenu/VBox/LowerHBox"]
 z_index = 5
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2
@@ -57,7 +76,7 @@ theme_override_styles/hover = ExtResource("2_q775a")
 theme_override_styles/normal = ExtResource("2_etnfi")
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="PauseMenu/VBox"]
+[node name="QuitButton" type="Button" parent="PauseMenu/VBox/LowerHBox"]
 z_index = 5
 custom_minimum_size = Vector2(120, 30)
 layout_mode = 2

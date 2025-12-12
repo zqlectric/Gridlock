@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 @onready var title_label: Label      = $VBox/TitleLabel
-@onready var resume_button: Button   = $VBox/ResumeButton
-@onready var restart_button: Button  = $VBox/RestartButton
-@onready var quit_button: Button     = $VBox/QuitButton
+@onready var resume_button: Button   = $VBox/UpperHBox/ResumeButton
+@onready var restart_button: Button  = $VBox/LowerHBox/RestartButton
+@onready var quit_button: Button     = $VBox/LowerHBox/QuitButton
+@onready var save_button: Button     = $VBox/UpperHBox/SaveButton
 @onready var dimmer: ColorRect       = $Dimmer
 
 var is_open: bool = false
@@ -18,6 +19,7 @@ func _ready() -> void:
 	resume_button.pressed.connect(_on_resume_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
+	save_button.pressed.connect(_on_save_pressed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -62,3 +64,7 @@ func _on_quit_pressed() -> void:
 	MusicManager.play_button_music()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UserInterfaces/MainMenu.tscn")
+
+func _on_save_pressed() -> void:
+	var player := GameManager.get_player_from_group()
+	GameManager.save_game(player)
