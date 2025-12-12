@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var timer_label: Label = $TopRight/TimerLabel
 @onready var gem_label: Label = $TopRight/GemLabel
 @onready var center_message: Label = $VBox/CenterMessage
+@onready var summary_label: Label = $VBox/SummaryMessage
 @onready var drone_message: Label = $DroneVBox/CenterMessage
 @onready var status_label: Label = $SaveVBox/CenterMessage
 @onready var mainmenu: Button = $VBox/MainMenu
@@ -52,6 +53,13 @@ func _on_all_gems_collected() -> void:
 func _on_run_won() -> void:
 	center_message.text = "YOU ESCAPED!"
 	center_message.visible = true
+	summary_label.text = \
+		"Gems Collected: %d / %d\nTime Remaining: %d seconds" % [
+			GameManager.collected_gems,
+			GameManager.required_gems,
+			int(GameManager.time_left)
+		]
+	summary_label.visible = true
 	mainmenu.visible = true
 	restart.visible = true
 	mainmenu.grab_focus()
@@ -61,6 +69,12 @@ func _on_run_won() -> void:
 func _on_run_lost() -> void:
 	center_message.text = "TIME UP!"
 	center_message.visible = true
+	summary_label.text = \
+		"Gems Collected: %d / %d" % [
+			GameManager.collected_gems,
+			GameManager.required_gems
+		]
+	summary_label.visible = true
 	mainmenu.visible = true
 	restart.visible = true
 	mainmenu.grab_focus()
