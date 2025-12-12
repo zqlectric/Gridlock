@@ -51,7 +51,7 @@ theme_override_font_sizes/font_size = 20
 text = "Movement:
 W / A / S / D - Move
 Mouse - Look around
-Shift - Spring
+Shift - Sprint
 Space - Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
